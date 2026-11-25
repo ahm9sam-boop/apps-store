@@ -1,0 +1,13 @@
+[
+ {
+  "name": "تطبيق القرآن الكريم والأحاديث الشريفة",
+  "desc": "القرآن كاملاً بدون إنترنت، الأذكار، مواقيت الصلاة، القبلة، السيرة وقصص الأنبياء وأكثر.",
+  "version": "1.8.3",
+  "size": "4.7 MB",
+  "icon": "noorislam.png",
+  "apk": "noorislam.apk",
+  "sha256": "63506fb1d21ffacb0c2ca4f7d142cd67f802134ba459d63ac089f6122e18546f",
+  "code": 16,
+  "pkg": "io.github.ahm9sam.noorislam"
+ }
+]

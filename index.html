@@ -1,1 +1,29 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=https://ahm9sam-boop.github.io/appstore/"><link rel="canonical" href="https://ahm9sam-boop.github.io/appstore/"><title>متجر أحمد</title></head><body><a href="https://ahm9sam-boop.github.io/appstore/">متجر أحمد</a></body></html>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apps Store</title>
+<style>body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#faf3e6;color:#3b2412}header{background:#4a2a15;color:#fff;padding:24px 16px;text-align:center}h1{margin:0;font-size:24px}header p{margin:6px 0 0;opacity:.85;font-size:14px}main{max-width:620px;margin:auto;padding:16px}.card{background:#fff;border-radius:16px;box-shadow:0 2px 10px #0002;padding:16px;margin-bottom:16px}.top{display:flex;gap:14px;align-items:center}.top img{width:72px;height:72px;border-radius:16px;background:#eee}h2{margin:0;font-size:17px;line-height:1.5}small{color:#7a5a3a}p{line-height:1.8;font-size:15px}a.btn{display:block;text-align:center;background:#2e7d32;color:#fff;text-decoration:none;padding:13px;border-radius:12px;font-size:17px}details{margin-top:12px;font-size:13px;color:#5b4026}code{display:block;direction:ltr;word-break:break-all;background:#f3e9d6;padding:6px;border-radius:8px;font-size:11px}.card small{display:block;margin-top:8px}ol{padding-right:20px;line-height:1.9}#top .ub{background:linear-gradient(135deg,#e65100,#ff9800);color:#fff;border-radius:18px;padding:18px;margin-bottom:16px;text-align:center;box-shadow:0 4px 16px #e6510066}#top .ub h3{margin:0 0 6px;font-size:22px}#top .ub p{margin:0 0 12px;color:#fff}#top .ub a{display:block;background:#fff;color:#bf360c;font-weight:bold;font-size:20px;padding:14px;border-radius:12px;text-decoration:none}.how{background:#fff8e1;border-radius:16px;padding:14px;font-size:14px}</style></head><body>
+<header><h1 dir="ltr">Apps Store</h1><p>تطبيقات أندرويد مجانية للتحميل المباشر</p></header>
+<main><div id="top"></div><div id="list"><div class="card"><h2>تطبيق القرآن الكريم والأحاديث الشريفة</h2><p>مجاني · يعمل بدون إنترنت</p><a class="btn" href="noorislam.apk" download>تحميل</a></div></div>
+<div class="how"><b>طريقة التثبيت</b><ol><li>افتح هذه الصفحة من Chrome على هاتف أندرويد.</li><li>اضغط "تحميل" ثم افتح الملف بعد انتهاء التحميل.</li><li>لو ظهرت رسالة أمان، اضغط "الإعدادات" وفعّل "السماح من هذا المصدر" ثم ارجع واضغط تثبيت.</li></ol></div></main>
+<script>
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var K=function(p){return 'inst_'+p};
+function get(p){try{return JSON.parse(localStorage.getItem(K(p)))}catch(e){return null}}
+if(location.search.indexOf('notinstalled')>-1){try{Object.keys(localStorage).filter(function(k){return k.indexOf('inst_')==0}).forEach(function(k){localStorage.removeItem(k)})}catch(e){}try{history.replaceState(null,'',location.pathname)}catch(e){}}
+function each(l,f){for(var i=0;i<l.length;i++)f(l[i],i)}
+function render(a){
+  var top='';
+  each(a,function(x,i){var st=get(x.pkg);if(st&&st.code<(x.code||0))top+='<div class="ub"><h3>\uD83D\uDD14 \u064A\u0648\u062C\u062F \u062A\u062D\u062F\u064A\u062B \u062C\u062F\u064A\u062F</h3><p>'+esc(x.name)+' \u2014 '+esc(x.version)+'</p><a data-u="'+i+'" href="'+esc(x.apk)+'" download>\u062A\u062D\u062F\u064A\u062B \u0627\u0644\u0622\u0646</a></div>'});
+  document.getElementById('top').innerHTML=top;
+  var h='';
+  each(a,function(x,i){
+    var st=get(x.pkg),code=x.code||0,label='\u062A\u062D\u0645\u064A\u0644',href=esc(x.apk),dl=' download',note='';
+    if(st){
+      if(st.code>=code){label='\u0641\u062A\u062D';href='intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package='+esc(x.pkg)+';S.browser_fallback_url='+encodeURIComponent(location.protocol+'//'+location.host+'/?notinstalled=1')+';end';dl='';note='<small>\u062A\u0645 \u062A\u062D\u0645\u064A\u0644 \u0647\u0630\u0627 \u0627\u0644\u0625\u0635\u062F\u0627\u0631 \u0639\u0644\u0649 \u0647\u0630\u0627 \u0627\u0644\u0645\u062A\u0635\u0641\u062D.</small>';}
+      else{label='\u062A\u062D\u062F\u064A\u062B';note='<small>\u064A\u0648\u062C\u062F \u0625\u0635\u062F\u0627\u0631 \u0623\u062D\u062F\u062B ('+esc(x.version)+').</small>';}
+    }
+    h+='<div class="card"><div class="top"><img src="'+esc(x.icon)+'" alt=""><div><h2>'+esc(x.name)+'</h2><small>\u0627\u0644\u0625\u0635\u062F\u0627\u0631 '+esc(x.version)+' \u00B7 '+esc(x.size)+' \u00B7 \u0645\u062C\u0627\u0646\u064A</small></div></div><p>'+esc(x.desc)+'</p><a class="btn" data-i="'+i+'" href="'+href+'"'+dl+'>'+label+'</a>'+note+(x.sha256?'<details><summary>SHA-256</summary><code>'+esc(x.sha256)+'</code></details>':'')+'</div>';
+  });
+  if(h)document.getElementById('list').innerHTML=h;
+  each(document.querySelectorAll('a.btn[download],#top a[data-u]'),function(b){b.onclick=function(){var x=a[b.getAttribute('data-i')||b.getAttribute('data-u')];try{localStorage.setItem(K(x.pkg),JSON.stringify({code:x.code||0,ts:new Date().getTime()}))}catch(e){}setTimeout(function(){render(a)},1500)}});
+}
+try{var xr=new XMLHttpRequest();xr.open('GET','apps.json?t='+new Date().getTime());xr.onload=function(){try{render(JSON.parse(xr.responseText))}catch(e){}};xr.send();}catch(e){}
+</script></body></html>
