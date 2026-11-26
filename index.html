@@ -4,7 +4,7 @@
 <main><div id="top"></div><div id="list"><div class="card"><h2>تطبيق القرآن الكريم والأحاديث الشريفة</h2><p>مجاني · يعمل بدون إنترنت</p><a class="btn" href="noorislam.apk" download>تحميل</a></div></div>
 <div class="how"><b>طريقة التثبيت</b><ol><li>افتح هذه الصفحة من Chrome على هاتف أندرويد.</li><li>اضغط "تحميل" ثم افتح الملف بعد انتهاء التحميل.</li><li>لو ظهرت رسالة أمان، اضغط "الإعدادات" وفعّل "السماح من هذا المصدر" ثم ارجع واضغط تثبيت.</li></ol></div></main>
 <script>
-var STORE_V='2026-11-26c';
+var STORE_V='2026-11-26d';
 (function(){try{fetch(location.pathname+'?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.text()}).then(function(t){var m=t.match(/STORE_V='([^']+)'/);if(m&&m[1]!==STORE_V&&sessionStorage.getItem('sv')!==m[1]){sessionStorage.setItem('sv',m[1]);location.replace(location.pathname+'?v='+Date.now());}}).catch(function(){})}catch(e){}})();
 var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
 var K=function(p){return 'inst_'+p};
@@ -16,14 +16,12 @@ function render(a){
   document.getElementById('top').innerHTML=top;
   var h='';
   each(a,function(x,i){
-    var st=get(x.pkg),code=x.code||0,btns='',note=x.beta?'<small style="color:#b26a00">\u0646\u0633\u062e\u0629 \u062a\u062c\u0631\u064a\u0628\u064a\u0629 \u00b7 \u0644\u0645 \u062a\u064f\u062c\u0631\u0651\u0628 \u0639\u0644\u0649 \u0647\u0627\u062a\u0641 \u062d\u0642\u064a\u0642\u064a \u0628\u0639\u062f.</small>':'';
+    var code=x.code||0,btns='',note=x.beta?'<small style="color:#b26a00">\u0646\u0633\u062e\u0629 \u062a\u062c\u0631\u064a\u0628\u064a\u0629 \u00b7 \u0644\u0645 \u062a\u064f\u062c\u0631\u0651\u0628 \u0639\u0644\u0649 \u0647\u0627\u062a\u0641 \u062d\u0642\u064a\u0642\u064a \u0628\u0639\u062f.</small>':'';
     var openHref='intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package='+esc(x.pkg)+';S.browser_fallback_url='+encodeURIComponent(location.protocol+'//'+location.host+'/?notinstalled=1')+';end';
     var unHref='intent://'+esc(x.pkg)+'#Intent;scheme=package;action=android.intent.action.DELETE;end';
     var dlBtn=function(t){return '<a class="btn" data-i="'+i+'" href="'+esc(x.apk)+'" download>'+t+'</a>'};
     if(x.locked){btns='<span class="btn out dis">\u0645\u0642\u0641\u0648\u0644 \u0645\u0624\u0642\u062a\u0627\u064b</span>';note='<small>\u0627\u0644\u062a\u0637\u0628\u064a\u0642 \u0642\u064a\u062f \u0627\u0644\u062a\u0637\u0648\u064a\u0631 \u0648\u0633\u064a\u062a\u0627\u062d \u0642\u0631\u064a\u0628\u0627\u064b.</small>';}
-    else if(!st){btns=dlBtn('\u062a\u062b\u0628\u064a\u062a');}
-    else if(st.code>=code){btns='<a class="btn out" href="'+unHref+'">\u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u062a\u062b\u0628\u064a\u062a</a><a class="btn" href="'+openHref+'">\u0641\u062a\u062d</a>';note='<small>\u0645\u062b\u0628\u0651\u062a \u00b7 \u0623\u062d\u062f\u062b \u0625\u0635\u062f\u0627\u0631 ('+esc(x.version)+').</small>';}
-    else{btns='<a class="btn out" href="'+unHref+'">\u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u062a\u062b\u0628\u064a\u062a</a>'+dlBtn('\u062a\u062d\u062f\u064a\u062b');note='<small>\u064a\u0648\u062c\u062f \u0625\u0635\u062f\u0627\u0631 \u0623\u062d\u062f\u062b ('+esc(x.version)+').</small>';}
+    else{btns=dlBtn('\u062a\u062d\u0645\u064a\u0644');}
     h+='<div class="card"><div class="top"><img src="'+esc(x.icon)+'" alt=""><div><h2>'+esc(x.name)+'</h2><small>\u0627\u0644\u0625\u0635\u062f\u0627\u0631 '+esc(x.version)+' \u00B7 '+esc(x.size)+' \u00B7 \u0645\u062c\u0627\u0646\u064a</small></div></div><p>'+esc(x.desc)+'</p><div class="bt">'+btns+'</div>'+note+(x.perms?'<details><summary>\u0627\u0644\u0623\u0630\u0648\u0646\u0627\u062A</summary><ul>'+x.perms.map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul></details>':'')+(x.sha256?'<details><summary>SHA-256</summary><code>'+esc(x.sha256)+'</code></details>':'')+'</div>';
   });
   if(h)document.getElementById('list').innerHTML=h;
