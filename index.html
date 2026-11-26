@@ -15,7 +15,7 @@ function render(a){
   document.getElementById('top').innerHTML=top;
   var h='';
   each(a,function(x,i){
-    var st=get(x.pkg),code=x.code||0,btns='',note='';
+    var st=get(x.pkg),code=x.code||0,btns='',note=x.beta?'<small style="color:#b26a00">\u0646\u0633\u062e\u0629 \u062a\u062c\u0631\u064a\u0628\u064a\u0629 \u00b7 \u0644\u0645 \u062a\u064f\u062c\u0631\u0651\u0628 \u0639\u0644\u0649 \u0647\u0627\u062a\u0641 \u062d\u0642\u064a\u0642\u064a \u0628\u0639\u062f.</small>':'';
     var openHref='intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package='+esc(x.pkg)+';S.browser_fallback_url='+encodeURIComponent(location.protocol+'//'+location.host+'/?notinstalled=1')+';end';
     var unHref='intent://'+esc(x.pkg)+'#Intent;scheme=package;action=android.intent.action.DELETE;end';
     var dlBtn=function(t){return '<a class="btn" data-i="'+i+'" href="'+esc(x.apk)+'" download>'+t+'</a>'};
