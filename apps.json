@@ -35,8 +35,8 @@
     "version": "1.1.0",
     "size": "12.8 MB",
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAABmFBMVEUAAABsfOFpft9mgN1jgttig9phhNlghNlghdhfhdhehtddhtddh9Zch9ZbiNVaiNVaidRZidRYitNXitNXi9JWi9JUjNFTjdBSjs9Rj845n75QkM5Rjs9Qj85mgd1PkM1OkcxOkM1NkcxMkstLk8oxpLlIlclLkstKk8pJlMlfhthIlchIlMlHlchGlsdFl8ZFlsdEl8ZDmMXI5uJCmcQqqbRBmsQ+m8IPdm5CmMVBmcRXi9NAmsM/m8I/msM9nME8ncAirq85n788nMH///87ncA6nr85nr84n743oL02obw2oL01obw0orszo7obs6oypLozorsyo7owpbgvpbgwpLkuprctp7Ysp7YtprcrqLUnq7IqqLUpqbQoqrMkrbAlrLEnqrMmq7Jjg9oqqbUkrLEhr64jrbBlgdwVtqdkgtsUt6ZUjdAbs6sesawhrq8fsK0gr64esK1sfeAcsqttfOEdsawVt6Zof94YtKlmgdwWtqdngN0XtagYtahrfeAbsqtpf94ZtKlqft8as6ojrrBVjNEUuKY0VQ7yAAAAAXRSTlMAQObYZgAAA85JREFUeNrd3XubTmUcxfFFQsix6CAhIkWHuxEqwpQKhcpMc6qZJulAJxQVldLb9syYXDNjxsyz1rqufa/n8wL2Xt+/9v7vB8zLfw2AybeNyl6vNvxSDWr+11Vpe/5v1Qmf317CH5VK3z/PgutVm3v/1crNtf/v6qXvv3/BPxHS989e8GGMmfdfCDLT/j+jzBBwKUr6/nsLrsRJ3z+t4GKgyft/ijQp4IdI6fsnFfwYKn3/3YJzsSYCvo91Z//hYJ0R8G+wsf1fReuEgM+itQK+jNYK+Dyaur+7bcVdMCIhAsqIVQMB3gL0S6iA0m+EYQkXUIZ9MCQhA8qQTUMBvgIMSuiAMmjSWICrAF0SIaB0WWBUogSUUQcMSKSAMmCAPokWUPp0zQYYCtArUQNKr6rpALkAPRI9oGgDevCpxBBQtAU4K3EEFGlBDQFSAT6WeAKKsKCOAKEAH0lcAYVegE8ktoDCLsB2iS+gkAvqCSALcEriDCjUApyRWAMKs6CqAKYAH0i6vYgFOC0xBxALcFJiDiAW5AeckJgDiAX5Ae9LzAHEAhyXmAOIBXhPYg4gFuQHvCsxBxAL8gOekJgDiAU4IjEHEAtwTGIOIBbgHYk5gFiQH/C2xBxALMgPeEtiDiAW4KjEHEAswCGJOYBYkB/wmsQcQCzID3hTMvX9+9o39QHEAhyUmAOIBXhDYg4gFuQH7JWYA4gFOCAxBxAL8gNelZi/A8QC7JeYA4gFeEViDiAW5Ae8LDEHEAvyA16UmAOIBXhJYg4gFmCPxBxALMgP2C0xBxALrAHyvxAT8LzEHEAswLMScwCxAC9IzAHEAjwnMQcQC/IDdkrMAcQCa4CMCdgmMQcQC7BDYg4gFuAZiTmAWJAfsFViDiAW5AdslpgDiAXYIjEHEAvwtMQcQCzID3hSYv4XIhbgKYk5gFiQH/C4xBxALMBGiTmAWIDHJOYAYkF+wAaJ+TtALMgP+E5iDiAWYL3EHEAswC2JOYBYkB/wqMQcQCzID3hEYg4gFuB1iTmAWIB1EnMAsQBrJeYAYkF+wBqJOYBYkB+wWmIOIBZglcQcQCzASok5gFiQH4CHFeaA9gdADGhcK2BFtFbA8mitgGXREF4wfn9gV7DxgIeCIbxg4grK0lgTAUti/X8KaHEodEwAHoyEDgrAF4Gm3ORbFGjqWcRv4kw/TJm+HzgfBR0YgGtBZj5QvCnGbCeiHwgx+5Hu3yPc70x6+n7g1+oB2QWY019Vw3wsrBbm6WalgOwCtONGddCu8Pljfq4GaAsqANHlRsGk3u23ARZXlHSDG7XbAAAAAElFTkSuQmCC",
-    "apk": "https://github.com/ahm9sam-boop/apps-store/releases/download/malafati-1.1.0/malafati.apk",
-    "sha256": "4dc903c4a637f5fe545d3ba8e9959fa174055a827aa8e5e1c3cfe0b9ceeaf647",
+    "apk": "",
+    "sha256": "",
     "code": 10100,
     "pkg": "com.malafati.reader",
     "perms": [
@@ -48,6 +48,7 @@
       "منع الجهاز من النوم أثناء المهام",
       "معرّف الإعلانات (من مكتبة داخل التطبيق)"
     ],
-    "beta": true
+    "beta": true,
+    "locked": true
   }
 ]
