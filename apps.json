@@ -13,12 +13,12 @@
  {
   "name": "ذاكر بذكاء - مساعد المذاكرة الذكي",
   "desc": "تفريغ المحاضرات، تلخيص، اختبارات، بطاقات مراجعة وخرائط ذهنية بـ 10 لغات. يحتاج إنترنت.",
-  "version": "1.0.0",
-  "size": "3.8 MB",
+  "version": "1.1.1",
+  "size": "3.7 MB",
   "icon": "https://raw.githubusercontent.com/ahm9sam-boop/zakir-bezaka-global/main/public/pwa-192x192.png",
   "apk": "https://github.com/ahm9sam-boop/zakir-bezaka-global/releases/latest/download/zakir-smart.apk",
-  "sha256": "e513747b0e578820e17147a1b0db5d16446995455ecbbab09f67bb17f9e60520",
-  "code": 1,
+  "sha256": "f49f00218852364514221b9ba9334bc702310edf086888b3b1bd68aae143fe03",
+  "code": 10101,
   "pkg": "com.zakir.smart"
  }
 ]
