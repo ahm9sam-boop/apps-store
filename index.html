@@ -1,31 +1,141 @@
 <!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta http-equiv="Cache-Control" content="no-cache"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apps Store</title>
-<style>body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#faf3e6;color:#3b2412}header{background:#4a2a15;color:#fff;padding:24px 16px;text-align:center}h1{margin:0;font-size:24px}header p{margin:6px 0 0;opacity:.85;font-size:14px}main{max-width:620px;margin:auto;padding:16px}.card{background:#fff;border-radius:16px;box-shadow:0 2px 10px #0002;padding:16px;margin-bottom:16px}.top{display:flex;gap:14px;align-items:center}.top img{width:72px;height:72px;border-radius:16px;background:#eee}h2{margin:0;font-size:17px;line-height:1.5}small{color:#7a5a3a}p{line-height:1.8;font-size:15px}a.btn{flex:1;display:block;text-align:center;background:#2e7d32;color:#fff;text-decoration:none;padding:13px;border-radius:12px;font-size:17px}span.btn{flex:1;display:block;text-align:center;padding:13px;border-radius:12px;font-size:17px}span.dis{background:#ddd!important;color:#888!important;border:1px solid #ccc!important;box-sizing:border-box}a.btn.out{background:#fff;color:#2e7d32;border:1px solid #2e7d32;box-sizing:border-box}.bt{display:flex;gap:10px}details{margin-top:12px;font-size:13px;color:#5b4026}code{display:block;direction:ltr;word-break:break-all;background:#f3e9d6;padding:6px;border-radius:8px;font-size:11px}.card small{display:block;margin-top:8px}ol{padding-right:20px;line-height:1.9}#top .ub{background:linear-gradient(135deg,#e65100,#ff9800);color:#fff;border-radius:18px;padding:18px;margin-bottom:16px;text-align:center;box-shadow:0 4px 16px #e6510066}#top .ub h3{margin:0 0 6px;font-size:22px}#top .ub p{margin:0 0 12px;color:#fff}#top .ub a{display:block;background:#fff;color:#bf360c;font-weight:bold;font-size:20px;padding:14px;border-radius:12px;text-decoration:none}.how{background:#fff8e1;border-radius:16px;padding:14px;font-size:14px}</style></head><body>
-<header><h1 dir="ltr">Apps Store</h1><p>تطبيقات أندرويد مجانية للتحميل المباشر</p></header>
-<main><div id="top"></div><div id="list"><div class="card"><h2>تطبيق القرآن الكريم والأحاديث الشريفة</h2><p>مجاني · يعمل بدون إنترنت</p><a class="btn" href="noorislam.apk" download>تحميل</a></div></div>
-<div class="how"><b>طريقة التثبيت</b><ol><li>افتح هذه الصفحة من Chrome على هاتف أندرويد.</li><li>اضغط "تحميل" ثم افتح الملف بعد انتهاء التحميل.</li><li>لو ظهرت رسالة أمان، اضغط "الإعدادات" وفعّل "السماح من هذا المصدر" ثم ارجع واضغط تثبيت.</li></ol></div></main>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,"Segoe UI",Arial,sans-serif;background:#fff;color:#1f1f1f}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;background:#fff;z-index:10;border-bottom:1px solid #e8e8e8;padding:10px 16px;display:flex;align-items:center;gap:12px}
+header h1{margin:0;font-size:20px;color:#01875f;display:flex;align-items:center;gap:8px;cursor:pointer}
+header h1 small{font-size:11px;color:#5f6368;font-weight:normal}
+#search{flex:1;max-width:420px;border:0;background:#f1f3f4;border-radius:22px;padding:10px 18px;font-size:14px;font-family:inherit;outline:none}
+main{max-width:760px;margin:auto;padding:16px}
+.card{display:flex;align-items:center;gap:14px;padding:14px 8px;border-bottom:1px solid #f0f0f0;cursor:pointer}
+.card:hover{background:#f8f9fa}
+.card img{width:56px;height:56px;border-radius:14px;background:#f1f3f4;flex:none}
+.card .inf{flex:1;min-width:0}
+.card h3{margin:0;font-size:15px;font-weight:600}
+.card small{display:block;color:#5f6368;font-size:12px;margin-top:3px}
+.stars{color:#f9ab00;font-size:13px;letter-spacing:1px}
+.stars .n{color:#5f6368;font-size:12px;letter-spacing:0}
+.badge{background:#e6f4ea;color:#137333;border-radius:10px;font-size:11px;padding:2px 8px}
+.btn{display:inline-block;border:0;cursor:pointer;font-family:inherit;background:#01875f;color:#fff;font-size:14px;font-weight:600;padding:9px 26px;border-radius:20px;text-align:center}
+.btn.ghost{background:#fff;color:#01875f;border:1px solid #dadce0}
+.btn.dis{background:#f1f3f4!important;color:#9aa0a6!important;cursor:default}
+.btnrow{display:flex;gap:10px;margin:14px 0;flex-wrap:wrap}
+.dhead{display:flex;gap:16px;align-items:flex-start;margin-top:8px}
+.dhead img{width:84px;height:84px;border-radius:20px;background:#f1f3f4;flex:none}
+.dhead h2{margin:0 0 4px;font-size:22px}
+.dev{color:#01875f;font-size:13px;font-weight:600}
+.dmeta{display:flex;gap:0;margin:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}
+.dmeta div{flex:1;text-align:center;padding:10px 4px;border-inline-start:1px solid #f0f0f0}
+.dmeta div:first-child{border-inline-start:0}
+.dmeta b{display:block;font-size:14px}
+.dmeta span{font-size:11px;color:#5f6368}
+.shots{display:flex;gap:10px;overflow-x:auto;padding:6px 2px 12px;scrollbar-width:thin}
+.shots img{height:260px;border-radius:12px;border:1px solid #eee;flex:none}
+.sec{margin:18px 0}
+.sec h3{font-size:15px;margin:0 0 8px;display:flex;align-items:center;gap:6px}
+.sec p{font-size:14px;line-height:1.9;color:#3c4043;margin:0}
+.muted{color:#5f6368;font-size:12px}
+.rbox{display:flex;gap:24px;align-items:center;background:#f8f9fa;border-radius:16px;padding:16px;margin-bottom:12px}
+.rbig{font-size:44px;font-weight:700}
+.rbars{flex:1}
+.rbar{display:flex;align-items:center;gap:8px;font-size:11px;color:#5f6368}
+.rbar .tr{flex:1;height:8px;background:#e8eaed;border-radius:4px;overflow:hidden}
+.rbar .fl{height:100%;background:#f9ab00}
+.rev{border-top:1px solid #f0f0f0;padding:12px 0;font-size:13px}
+.rev b{font-size:13px}
+.rev p{margin:4px 0 0;color:#3c4043;line-height:1.8}
+.revform{background:#f8f9fa;border-radius:16px;padding:14px;margin-top:10px}
+.revform input,.revform textarea{width:100%;border:1px solid #dadce0;border-radius:10px;padding:9px 12px;font-family:inherit;font-size:13px;margin-bottom:8px;background:#fff;outline:none}
+.revform textarea{min-height:70px;resize:vertical}
+.starinput{font-size:24px;color:#dadce0;cursor:pointer;letter-spacing:4px;margin-bottom:8px;user-select:none}
+.starinput span.on{color:#f9ab00}
+table.info{width:100%;border-collapse:collapse;font-size:13px}
+table.info td{padding:8px 4px;border-bottom:1px solid #f0f0f0;color:#3c4043}
+table.info td:first-child{color:#5f6368;width:40%}
+code{display:block;direction:ltr;word-break:break-all;background:#f1f3f4;padding:8px;border-radius:8px;font-size:11px}
+details{margin-top:10px;font-size:13px}
+summary{cursor:pointer;color:#5f6368}
+.back{border:0;background:none;font-size:22px;cursor:pointer;color:#5f6368;padding:4px 8px}
+.how{background:#e8f0fe;border-radius:14px;padding:12px 14px;font-size:12.5px;color:#1a3c74;line-height:1.9;margin-top:14px}
+.how b{display:block;margin-bottom:4px}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#202124;color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;display:none;z-index:50}
+</style></head><body>
+<header><h1 onclick="location.hash=''">&#9654; Apps Store <small>تطبيقات أندرويد مجانية</small></h1><input id="search" placeholder="ابحث عن تطبيق" oninput="home(this.value)"></header>
+<main id="app"></main>
+<div id="toast"></div>
 <script>
-var STORE_V='2026-11-26d';
+var STORE_V='2026-11-27a';
 (function(){try{fetch(location.pathname+'?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.text()}).then(function(t){var m=t.match(/STORE_V='([^']+)'/);if(m&&m[1]!==STORE_V&&sessionStorage.getItem('sv')!==m[1]){sessionStorage.setItem('sv',m[1]);location.replace(location.pathname+'?v='+Date.now());}}).catch(function(){})}catch(e){}})();
 var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var APPS=[];
 var K=function(p){return 'inst_'+p};
-function get(p){try{return JSON.parse(localStorage.getItem(K(p)))}catch(e){return null}}
+function getLS(p){try{return JSON.parse(localStorage.getItem(K(p)))}catch(e){return null}}
+function setLS(p,v){try{localStorage.setItem(K(p),JSON.stringify(v))}catch(e){}}
 if(location.search.indexOf('notinstalled')>-1){try{Object.keys(localStorage).filter(function(k){return k.indexOf('inst_')==0}).forEach(function(k){localStorage.removeItem(k)})}catch(e){}try{history.replaceState(null,'',location.pathname)}catch(e){}}
-function each(l,f){for(var i=0;i<l.length;i++)f(l[i],i)}
-function render(a){
-  var top='';
-  document.getElementById('top').innerHTML=top;
-  var h='';
-  each(a,function(x,i){
-    var code=x.code||0,btns='',note=x.beta?'<small style="color:#b26a00">\u0646\u0633\u062e\u0629 \u062a\u062c\u0631\u064a\u0628\u064a\u0629 \u00b7 \u0644\u0645 \u062a\u064f\u062c\u0631\u0651\u0628 \u0639\u0644\u0649 \u0647\u0627\u062a\u0641 \u062d\u0642\u064a\u0642\u064a \u0628\u0639\u062f.</small>':'';
-    var openHref='intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package='+esc(x.pkg)+';S.browser_fallback_url='+encodeURIComponent(location.protocol+'//'+location.host+'/?notinstalled=1')+';end';
-    var unHref='intent://'+esc(x.pkg)+'#Intent;scheme=package;action=android.intent.action.DELETE;end';
-    var dlBtn=function(t){return '<a class="btn" data-i="'+i+'" href="'+esc(x.apk)+'" download>'+t+'</a>'};
-    if(x.locked){btns='<span class="btn out dis">\u0645\u0642\u0641\u0648\u0644 \u0645\u0624\u0642\u062a\u0627\u064b</span>';note='<small>\u0627\u0644\u062a\u0637\u0628\u064a\u0642 \u0642\u064a\u062f \u0627\u0644\u062a\u0637\u0648\u064a\u0631 \u0648\u0633\u064a\u062a\u0627\u062d \u0642\u0631\u064a\u0628\u0627\u064b.</small>';}
-    else{btns=dlBtn('\u062a\u062d\u0645\u064a\u0644');}
-    h+='<div class="card"><div class="top"><img src="'+esc(x.icon)+'" alt=""><div><h2>'+esc(x.name)+'</h2><small>\u0627\u0644\u0625\u0635\u062f\u0627\u0631 '+esc(x.version)+' \u00B7 '+esc(x.size)+' \u00B7 \u0645\u062c\u0627\u0646\u064a</small></div></div><p>'+esc(x.desc)+'</p><div class="bt">'+btns+'</div>'+note+(x.perms?'<details><summary>\u0627\u0644\u0623\u0630\u0648\u0646\u0627\u062A</summary><ul>'+x.perms.map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul></details>':'')+(x.sha256?'<details><summary>SHA-256</summary><code>'+esc(x.sha256)+'</code></details>':'')+'</div>';
-  });
-  if(h)document.getElementById('list').innerHTML=h;
-  each(document.querySelectorAll('a.btn[download],#top a[data-u]'),function(b){b.onclick=function(){var x=a[b.getAttribute('data-i')||b.getAttribute('data-u')];try{localStorage.setItem(K(x.pkg),JSON.stringify({code:x.code||0,ts:new Date().getTime()}))}catch(e){}setTimeout(function(){render(a)},1500)}});
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.style.display='block';setTimeout(function(){t.style.display='none'},2500)}
+function starStr(r){var f=Math.round(r||0),s='';for(var i=1;i<=5;i++)s+=i<=f?'★':'☆';return s}
+function ratingLine(x){if(!x.rating)return '<span class="badge">جديد</span>';return '<span class="stars">'+starStr(x.rating)+' <span class="n">'+x.rating+'</span></span>'}
+function btnFor(x){
+  if(x.locked)return '<span class="btn dis">مقفول مؤقتاً</span>';
+  var st=getLS(x.pkg),h='';
+  if(st&&st.code&&x.code>st.code)h+='<button class="btn" onclick="dl(\''+esc(x.pkg)+'\')">تحديث</button>';
+  else if(st&&st.code)h+='<button class="btn ghost" onclick="opn(\''+esc(x.pkg)+'\')">فتح</button>';
+  else h+='<button class="btn" onclick="dl(\''+esc(x.pkg)+'\')">تثبيت</button>';
+  if(st&&st.code)h+='<button class="btn ghost" onclick="uninst(\''+esc(x.pkg)+'\')">إلغاء التثبيت</button>';
+  return h;
 }
-try{var xr=new XMLHttpRequest();xr.open('GET','apps.json?t='+new Date().getTime());xr.setRequestHeader('Cache-Control','no-cache');xr.onload=function(){try{render(JSON.parse(xr.responseText))}catch(e){}};xr.send();}catch(e){}
+function findApp(p){for(var i=0;i<APPS.length;i++)if(APPS[i].pkg===p)return APPS[i];return null}
+function dl(pkg){var x=findApp(pkg);if(!x||!x.apk)return;setLS(pkg,{code:x.code||0,ts:Date.now()});var a=document.createElement('a');a.href=x.apk;a.download='';document.body.appendChild(a);a.click();a.remove();toast('بدأ التحميل…');setTimeout(route,800)}
+function opn(pkg){location.href='intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package='+pkg+';S.browser_fallback_url='+encodeURIComponent(location.protocol+'//'+location.host+location.pathname+'?notinstalled=1')+';end'}
+function uninst(pkg){location.href='intent://'+pkg+'#Intent;scheme=package;action=android.intent.action.DELETE;end';setTimeout(function(){var s=getLS(pkg);if(s){localStorage.removeItem(K(pkg));route()}},4000)}
+function home(q){
+  var h='<div class="how"><b>طريقة التثبيت</b>١) اضغط "تثبيت" وافتح الملف بعد التحميل. ٢) لو ظهر تحذير أمان، فعّل "السماح من هذا المصدر" ثم أكمل التثبيت.</div>';
+  var list=APPS.filter(function(x){return !q||x.name.indexOf(q)>-1});
+  if(!list.length)h+='<p class="muted" style="text-align:center;padding:30px">لا توجد نتائج</p>';
+  list.forEach(function(x){
+    h+='<div class="card" onclick="location.hash=\'app='+esc(x.pkg)+'\'"><img src="'+esc(x.icon)+'" alt="" loading="lazy"><div class="inf"><h3>'+esc(x.name)+'</h3><small>'+esc(x.category||'أدوات')+' · '+esc(x.size)+'</small><small>'+ratingLine(x)+(x.downloads?' · <span class="n">'+esc(x.downloads)+' تحميل</span>':'')+'</small></div>'+(x.locked?'<span class="btn dis">قريباً</span>':'<span class="btn ghost">عرض</span>')+'</div>';
+  });
+  document.getElementById('app').innerHTML=h;
+}
+function bars(r){
+  var c=(r&&r.counts)||[0,0,0,0,0],tot=0;c.forEach(function(n){tot+=n});
+  var h='';for(var i=5;i>=1;i--){var p=tot?Math.round(100*(c[i-1]||0)/tot):0;h+='<div class="rbar"><span>'+i+'</span><div class="tr"><div class="fl" style="width:'+p+'%"></div></div><span>'+(c[i-1]||0)+'</span></div>'}
+  return h;
+}
+function myReviews(pkg){var r=getLS('rev_'+pkg);return Array.isArray(r)?r:[]}
+function detail(pkg){
+  var x=findApp(pkg);if(!x){location.hash='';return}
+  var revs=(x.reviews||[]).concat(myReviews(pkg));
+  var h='<button class="back" onclick="location.hash=\'\'">→</button>';
+  h+='<div class="dhead"><img src="'+esc(x.icon)+'" alt=""><div><h2>'+esc(x.name)+'</h2><div class="dev">'+esc(x.developer||'Apps Store')+'</div><div class="muted">'+(x.beta?'نسخة تجريبية · ':'')+(x.contains_ads?'يحتوي على إعلانات':'بدون إعلانات')+'</div></div></div>';
+  h+='<div class="dmeta"><div><b>'+(x.rating?x.rating+' ★':'جديد')+'</b><span>'+(x.ratings_count?x.ratings_count+' مراجعة':'التقييم')+'</span></div><div><b>'+esc(x.downloads||'—')+'</b><span>تحميل</span></div><div><b>'+esc(x.size)+'</b><span>الحجم</span></div></div>';
+  h+='<div class="btnrow">'+btnFor(x)+'</div>';
+  if(x.locked)h+='<p class="muted">التطبيق قيد التطوير وسيتاح قريباً.</p>';
+  if(x.screenshots&&x.screenshots.length){h+='<div class="shots">'+x.screenshots.map(function(s){return '<img src="'+esc(s)+'" loading="lazy" alt="">'}).join('')+'</div>'}
+  h+='<div class="sec"><h3>حول هذا التطبيق</h3><p>'+esc(x.desc)+'</p></div>';
+  if(x.whats_new)h+='<div class="sec"><h3>ما الجديد</h3><p>'+esc(x.whats_new)+'</p></div>';
+  h+='<div class="sec"><h3>التقييمات والمراجعات</h3>';
+  h+='<div class="rbox"><div style="text-align:center"><div class="rbig">'+(x.rating||'—')+'</div><div class="stars">'+starStr(x.rating||0)+'</div><div class="muted">'+(x.ratings_count||0)+' مراجعة</div></div><div class="rbars">'+bars(x.rating_bars)+'</div></div>';
+  if(revs.length){revs.forEach(function(r){h+='<div class="rev"><b>'+esc(r.name||'مستخدم')+'</b> <span class="stars">'+starStr(r.stars)+'</span><p>'+esc(r.text)+'</p></div>'})}
+  else h+='<p class="muted">لا توجد مراجعات بعد. كن أول من يقيّم!</p>';
+  h+='<div class="revform"><b style="font-size:13px">قيّم هذا التطبيق</b><div class="starinput" id="si"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><input id="rn" placeholder="اسمك (اختياري)"><textarea id="rt" placeholder="اكتب مراجعتك…"></textarea><button class="btn" onclick="postRev(\''+esc(x.pkg)+'\')">نشر المراجعة</button><div class="muted" style="margin-top:6px">مراجعتك تُحفظ على جهازك وتظهر لك هنا.</div></div></div>';
+  h+='<div class="sec"><h3>معلومات التطبيق</h3><table class="info"><tr><td>الإصدار</td><td>'+esc(x.version)+'</td></tr>'+(x.updated?'<tr><td>آخر تحديث</td><td>'+esc(x.updated)+'</td></tr>':'')+'<tr><td>الحجم</td><td>'+esc(x.size)+'</td></tr><tr><td>الحزمة</td><td dir="ltr">'+esc(x.pkg)+'</td></tr></table>';
+  if(x.perms)h+='<details><summary>الأذونات ('+x.perms.length+')</summary><ul>'+x.perms.map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul></details>';
+  if(x.sha256)h+='<details><summary>SHA-256</summary><code>'+esc(x.sha256)+'</code></details>';
+  h+='</div>';
+  document.getElementById('app').innerHTML=h;
+  var si=document.getElementById('si'),cur=0;
+  si.onclick=function(e){if(e.target.tagName!=='SPAN')return;cur=Array.prototype.indexOf.call(si.children,e.target)+1;Array.prototype.forEach.call(si.children,function(s,i){s.className=i<cur?'on':''});si.dataset.v=cur};
+}
+function postRev(pkg){
+  var st=+(document.getElementById('si').dataset.v||0),tx=document.getElementById('rt').value.trim(),nm=document.getElementById('rn').value.trim();
+  if(!st){toast('اختار عدد النجوم أولاً');return}
+  if(!tx){toast('اكتب مراجعتك أولاً');return}
+  var r=myReviews(pkg);r.unshift({name:nm||'مستخدم',stars:st,text:tx});setLS('rev_'+pkg,r);toast('شكراً! تم نشر مراجعتك');detail(pkg);
+}
+function route(){var m=location.hash.match(/app=([\w.]+)/);if(m)detail(m[1]);else home(document.getElementById('search').value)}
+window.addEventListener('hashchange',route);
+var xr=new XMLHttpRequest();xr.open('GET','apps.json?t='+Date.now());xr.setRequestHeader('Cache-Control','no-cache');
+xr.onload=function(){try{APPS=JSON.parse(xr.responseText)}catch(e){}route()};xr.onerror=function(){document.getElementById('app').innerHTML='<p class="muted">تعذر تحميل القائمة</p>'};xr.send();
 </script></body></html>
