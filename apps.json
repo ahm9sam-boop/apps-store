@@ -8,7 +8,11 @@
     "apk": "noorislam.apk",
     "sha256": "63506fb1d21ffacb0c2ca4f7d142cd67f802134ba459d63ac089f6122e18546f",
     "code": 16,
-    "pkg": "io.github.ahm9sam.noorislam"
+    "pkg": "io.github.ahm9sam.noorislam",
+    "category": "كتب ومراجع",
+    "contains_ads": true,
+    "developer": "Apps Store",
+    "updated": "نوفمبر 2026"
   },
   {
     "name": "ذاكر بذكاء - مساعد المذاكرة الذكي",
@@ -27,7 +31,9 @@
       "الاهتزاز",
       "التشغيل بعد إعادة تشغيل الجهاز (لاستمرار التذكيرات)"
     ],
-    "locked": true
+    "locked": true,
+    "category": "تعليم",
+    "developer": "Apps Store"
   },
   {
     "name": "ملفاتي قارئ PDF",
@@ -48,6 +54,16 @@
       "منع الجهاز من النوم أثناء المهام",
       "معرّف الإعلانات (من مكتبة داخل التطبيق)"
     ],
-    "beta": true
+    "beta": true,
+    "category": "أدوات",
+    "contains_ads": true,
+    "developer": "Apps Store",
+    "updated": "27 نوفمبر 2026",
+    "whats_new": "زر قلم عائم أسفل الشاشة يفتح شريط أدوات الرسم والكتابة الصغير، إصلاح عرض الخطوط في ملفات PDF، وإزالة الشريط العلوي من شاشة القراءة.",
+    "screenshots": [
+      "https://github.com/ahm9sam-boop/apps-store/releases/download/malafati-1.2.4/malafati-shot1.png",
+      "https://github.com/ahm9sam-boop/apps-store/releases/download/malafati-1.2.4/malafati-shot2.png",
+      "https://github.com/ahm9sam-boop/apps-store/releases/download/malafati-1.2.4/malafati-shot3.png"
+    ]
   }
 ]
