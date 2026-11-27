@@ -65,13 +65,17 @@ summary{cursor:pointer;color:#5f6368}
 <main id="app"></main>
 <div id="toast"></div>
 <script>
-var STORE_V='2026-11-27a';
+var STORE_V='2026-11-27b';
 (function(){try{fetch(location.pathname+'?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.text()}).then(function(t){var m=t.match(/STORE_V='([^']+)'/);if(m&&m[1]!==STORE_V&&sessionStorage.getItem('sv')!==m[1]){sessionStorage.setItem('sv',m[1]);location.replace(location.pathname+'?v='+Date.now());}}).catch(function(){})}catch(e){}})();
 var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
 var APPS=[];
 var K=function(p){return 'inst_'+p};
 function getLS(p){try{return JSON.parse(localStorage.getItem(K(p)))}catch(e){return null}}
 function setLS(p,v){try{localStorage.setItem(K(p),JSON.stringify(v))}catch(e){}}
+var REV_API='https://script.google.com/macros/s/AKfycbyuww8gLTOZKGt-b0dkpAD9307G4fHimNk-ITbzZozTRhx01_DuF-B-_pLeHzB7N9Ni/exec';
+var REV_CACHE={};
+function revFetch(pkg,cb){var id='rcb'+Math.floor(Math.random()*1e9);window[id]=function(d){d._t=Date.now();REV_CACHE[pkg]=d;try{delete window[id]}catch(e){window[id]=undefined}cb&&cb(d)};var s=document.createElement('script');s.src=REV_API+'?pkg='+encodeURIComponent(pkg)+'&callback='+id+'&t='+Date.now();s.onerror=function(){cb&&cb(null)};document.body.appendChild(s)}
+function revRefresh(pkg){revFetch(pkg,function(d){if(!d)return;var m=location.hash.match(/app=([\w.]+)/);if(m&&m[1]===pkg)detail(pkg)})}
 if(location.search.indexOf('notinstalled')>-1){try{Object.keys(localStorage).filter(function(k){return k.indexOf('inst_')==0}).forEach(function(k){localStorage.removeItem(k)})}catch(e){}try{history.replaceState(null,'',location.pathname)}catch(e){}}
 function toast(m){var t=document.getElementById('toast');t.textContent=m;t.style.display='block';setTimeout(function(){t.style.display='none'},2500)}
 function starStr(r){var f=Math.round(r||0),s='';for(var i=1;i<=5;i++)s+=i<=f?'★':'☆';return s}
@@ -106,20 +110,24 @@ function bars(r){
 function myReviews(pkg){var r=getLS('rev_'+pkg);return Array.isArray(r)?r:[]}
 function detail(pkg){
   var x=findApp(pkg);if(!x){location.hash='';return}
-  var revs=(x.reviews||[]).concat(myReviews(pkg));
+  var rv=REV_CACHE[pkg];
+  var rating=rv?rv.rating:x.rating,rcount=rv?rv.ratings_count:x.ratings_count,rcounts=rv?rv.counts:x.rating_bars;
+  var base=rv?rv.reviews:(x.reviews||[]),seen={};
+  base.forEach(function(r){seen[(r.name||'')+'|'+(r.text||'')]=1});
+  var revs=base.concat(myReviews(pkg).filter(function(r){return !seen[(r.name||'')+'|'+(r.text||'')]}));
   var h='<button class="back" onclick="location.hash=\'\'">→</button>';
   h+='<div class="dhead"><img src="'+esc(x.icon)+'" alt=""><div><h2>'+esc(x.name)+'</h2><div class="dev">'+esc(x.developer||'Apps Store')+'</div><div class="muted">'+(x.beta?'نسخة تجريبية · ':'')+(x.contains_ads?'يحتوي على إعلانات':'بدون إعلانات')+'</div></div></div>';
-  h+='<div class="dmeta"><div><b>'+(x.rating?x.rating+' ★':'جديد')+'</b><span>'+(x.ratings_count?x.ratings_count+' مراجعة':'التقييم')+'</span></div><div><b>'+esc(x.downloads||'—')+'</b><span>تحميل</span></div><div><b>'+esc(x.size)+'</b><span>الحجم</span></div></div>';
+  h+='<div class="dmeta"><div><b>'+(rating?rating+' ★':'جديد')+'</b><span>'+(rcount?rcount+' مراجعة':'التقييم')+'</span></div><div><b>'+esc(x.downloads||'—')+'</b><span>تحميل</span></div><div><b>'+esc(x.size)+'</b><span>الحجم</span></div></div>';
   h+='<div class="btnrow">'+btnFor(x)+'</div>';
   if(x.locked)h+='<p class="muted">التطبيق قيد التطوير وسيتاح قريباً.</p>';
   if(x.screenshots&&x.screenshots.length){h+='<div class="shots">'+x.screenshots.map(function(s){return '<img src="'+esc(s)+'" loading="lazy" alt="">'}).join('')+'</div>'}
   h+='<div class="sec"><h3>حول هذا التطبيق</h3><p>'+esc(x.desc)+'</p></div>';
   if(x.whats_new)h+='<div class="sec"><h3>ما الجديد</h3><p>'+esc(x.whats_new)+'</p></div>';
   h+='<div class="sec"><h3>التقييمات والمراجعات</h3>';
-  h+='<div class="rbox"><div style="text-align:center"><div class="rbig">'+(x.rating||'—')+'</div><div class="stars">'+starStr(x.rating||0)+'</div><div class="muted">'+(x.ratings_count||0)+' مراجعة</div></div><div class="rbars">'+bars(x.rating_bars)+'</div></div>';
+  h+='<div class="rbox"><div style="text-align:center"><div class="rbig">'+(rating||'—')+'</div><div class="stars">'+starStr(rating||0)+'</div><div class="muted">'+(rcount||0)+' مراجعة</div></div><div class="rbars">'+bars(rcounts)+'</div></div>';
   if(revs.length){revs.forEach(function(r){h+='<div class="rev"><b>'+esc(r.name||'مستخدم')+'</b> <span class="stars">'+starStr(r.stars)+'</span><p>'+esc(r.text)+'</p></div>'})}
   else h+='<p class="muted">لا توجد مراجعات بعد. كن أول من يقيّم!</p>';
-  h+='<div class="revform"><b style="font-size:13px">قيّم هذا التطبيق</b><div class="starinput" id="si"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><input id="rn" placeholder="اسمك (اختياري)"><textarea id="rt" placeholder="اكتب مراجعتك…"></textarea><button class="btn" onclick="postRev(\''+esc(x.pkg)+'\')">نشر المراجعة</button><div class="muted" style="margin-top:6px">مراجعتك تُحفظ على جهازك وتظهر لك هنا.</div></div></div>';
+  h+='<div class="revform"><b style="font-size:13px">قيّم هذا التطبيق</b><div class="starinput" id="si"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><input id="rn" placeholder="اسمك (اختياري)"><textarea id="rt" placeholder="اكتب مراجعتك…"></textarea><button class="btn" onclick="postRev(\''+esc(x.pkg)+'\')">نشر المراجعة</button><div class="muted" style="margin-top:6px">تُنشر مراجعتك وتظهر لكل زوار المتجر.</div></div></div>';
   h+='<div class="sec"><h3>معلومات التطبيق</h3><table class="info"><tr><td>الإصدار</td><td>'+esc(x.version)+'</td></tr>'+(x.updated?'<tr><td>آخر تحديث</td><td>'+esc(x.updated)+'</td></tr>':'')+'<tr><td>الحجم</td><td>'+esc(x.size)+'</td></tr><tr><td>الحزمة</td><td dir="ltr">'+esc(x.pkg)+'</td></tr></table>';
   if(x.perms)h+='<details><summary>الأذونات ('+x.perms.length+')</summary><ul>'+x.perms.map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul></details>';
   if(x.sha256)h+='<details><summary>SHA-256</summary><code>'+esc(x.sha256)+'</code></details>';
@@ -127,12 +135,17 @@ function detail(pkg){
   document.getElementById('app').innerHTML=h;
   var si=document.getElementById('si'),cur=0;
   si.onclick=function(e){if(e.target.tagName!=='SPAN')return;cur=Array.prototype.indexOf.call(si.children,e.target)+1;Array.prototype.forEach.call(si.children,function(s,i){s.className=i<cur?'on':''});si.dataset.v=cur};
+  if(!rv||Date.now()-(rv._t||0)>60000)revRefresh(pkg);
 }
 function postRev(pkg){
   var st=+(document.getElementById('si').dataset.v||0),tx=document.getElementById('rt').value.trim(),nm=document.getElementById('rn').value.trim();
   if(!st){toast('اختار عدد النجوم أولاً');return}
   if(!tx){toast('اكتب مراجعتك أولاً');return}
-  var r=myReviews(pkg);r.unshift({name:nm||'مستخدم',stars:st,text:tx});setLS('rev_'+pkg,r);toast('شكراً! تم نشر مراجعتك');detail(pkg);
+  var r=myReviews(pkg);r.unshift({name:nm||'مستخدم',stars:st,text:tx});setLS('rev_'+pkg,r);
+  try{fetch(REV_API,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({pkg:pkg,name:nm||'مستخدم',stars:st,text:tx})})}catch(e){}
+  delete REV_CACHE[pkg];
+  toast('شكراً! تم نشر مراجعتك');detail(pkg);
+  setTimeout(function(){revRefresh(pkg)},2500);
 }
 function route(){var m=location.hash.match(/app=([\w.]+)/);if(m)detail(m[1]);else home(document.getElementById('search').value)}
 window.addEventListener('hashchange',route);
