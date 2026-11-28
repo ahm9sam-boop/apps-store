@@ -114,5 +114,24 @@
    "https://github.com/ahm9sam-boop/apps-store/releases/download/sawti-recorder-1.0.0/5-s4-settings.png"
   ],
   "locked": false
+ },
+ {
+  "name": "عيدية - بطاقات تهنئة باسمك",
+  "desc": "اصنع بطاقة تهنئة باسمك في ثانية: نص أو صورة أو فيديو (WebM) مجاناً، بدون تسجيل وبدون رقم هاتف أو اسم. تطبيق ويب يعمل من المتصفح مباشرة.",
+  "version": "1.0",
+  "size": "تطبيق ويب",
+  "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAGrElEQVR4nO3dzXMURRjH8Z7Unjx7Rb3qxZNahS9wsyRVJBIPMQtJwOANFA9cvagHD4rgzZCEEJYcIiSpAhI5+QJ/l4cp11S2Z9MzT0/P8/R+PzUHK2Ze9ukf/exs70Dx7alTDmhqqusLgG0ECCK9ousrgGnMQBAhQBChhUGk50gQBGhhEKGFQYQZCCIECCK0MIgwA0Gk54q25qBvnl1q6cho4KdP7rdx2OK711+Le8Qb5Ea3n6MmKWaAiI4hsWIUJ0BExyh5jKYK54Qb6bHrxrNLwtGX3oV9TXqME45g8b2ghZ147lvtvPNHXe2NVPHDGw0D9NXTymv65Ry5USr6qDUMUNV1EB0TIg5fk/dApMe6qpEaMz9VaXIX5nX73H35DR1bsu12RYbqHqf2DHTdF9Kqq4Fm3lHzju8YERZTSY9d8rGr18K88ex8NmaTbKOuP63x6aJ0Nf7O9FZ76/lI4M701rUnF4//NHhM+T4QRGq0ME9Ou55+2aJso649uRi4r2gG+nV6S7I7lJCMIy0MIqIv1Uv2hXKBg8sMBBHZs/FMQRkLG1xaGPxoYUiBAEGEFgY/WhhSkC2msoyasbDBpYXBjxaGFAgQRGhh8KOFIQUCBJEed/HwChxcZiCI1PhO9KjOv8wr3L7c76s6Todb48HttZtPNa7u99Mf/7fzD1o9qQYZBqhWVq7u94XDPOZ0k5CqDD8HWj3/wDm3EhyjZK+ivDCdRRsVeJ3ZvoleDf6DHh41yb7h12NLzqvxqzMD59zK3sLJv9rmCykvQ3mtPMIuOP+7sLvl+I21srfQ4Mgh0bw7M+i8Aq0OboZvokeVGfoiZCqKfdLsZfseaNT4Ea0br/G/PyHpcVnehY2xNjNwzl2pGPsoL6c8hbnKjAp8CRM0Aw2tzQzWfDNEVbACf7PqsHmbxACV4g72BEanNNGr8euzA+fc5d3/p5MrewvlD8c4+vvDg1gvxShW40OdmJiW9s0DAXLOufXZwTAKxyaYY4b/9+gukyz/DxLDt43/AnFiETZmbXw8GL41HlwDHyQuj50S4vrx403n3M3DxfI/jhn+/ObhYrJL2tA9z2lvYSnTM+RNz5ift6qTCoRT3cKU1y6Z5d0mS3VpWtiUK4rQzXOS4H3rb0uk54il3YVWq+05ZdiOSlvY0uPPu74EdXTWZLLWwqxLWfDAcymdgWAFAYIILcwSWhhyw180boq+KYgWZom+/NDCIEOAIEILs4QWhtzk/GhzhlIWnL9oPD+0MORGaYAGc9tdX4I6Omui9xuJD1XWqysP57a1fiNRMTJU0lwH1QFyumuXhvIKGHi0efszTwXnd+ZTnDst7yvt6qOSnB9tzjI9zubrshcgi1UOZ+7V6b0L827m6tvA/M58+sKOyuEuDPoRIIiwFqaRhsIGXgOr8SppKCyr8XZpKGzgNfAeCCIECCK0MI00FJYWhhQIEEQMrMZPIA2FzXk1HnoQIIhwF6aRhsJyF4YUCBBEaGEaaSgsq/GWaShs4D/73fZlIG+0MI00FJa7MKRAgCBCC9NIQ2HD78LaPwnq0lBYFlORAC1MIw2F5S4MKRAgiNDCNNJQWFoYUmAxVSUNheXRZrs0FJYWhhQIEERoYRppKCwtDCkQIIjwaLNGGgrLo81IgQBBhLswjTQUlrswpECAIEIL00hDYYNbWFGEbp6TBO8baTvo70StkkYH/Z30hfVcR9iO9lpY3hky9+qM/XNP5XZorcqBDvs7XZV0VOCO9magUn4ZMvqKel1fQHNtVPztV1/p6tRGcRcGPz5IRAqsxsOP1XikQIAgwpto+PEmGikQIIjQwuAXOLg8G48K/EXjSIAWBj/uwpACAYIILQx+4Xdh7Z8EFrGYigRoYfDjLgwpECCIiB7rObs519VjKGwRt7Obc6ODG7hvjRnoz8Xfm8YUxoSPtWwx1TnWU/MUPKw1Wpj3kGfuXeh8BmaTbGfuXfDkJ3ir9yb6r6VHtX4fFtUa5Qh3YR/5IgwT5GNXHLzzZt19PvSd9W8mJ2uijGO0z4G8VwO1Yo1XkwBVhZQMWVE1Ug3aSHH4bu0WVvpgozIu/yzTzpSKPmrNAzT+akokSYn2RkoUIBdwZdBP8ue83geJo9sL5hjjXiw/kgQgwl0YGbJLPnbFH7IWdtT7tDM7Yv2xL57HC1DpNDHS7WXUjlE8f++tiIc76vT6py0dGQ28vPy4jcO2GCBMAtGX6gG+Ew0RAgQRWhhEmIEgIns2HhOPFgYRWhhECBBEaGEQYQaCSK/g2WQI/AsVJzio3INQXQAAAABJRU5ErkJggg==",
+  "apk": "",
+  "web": "https://eideya.pages.dev/",
+  "sha256": "",
+  "code": 0,
+  "pkg": "dev.eideya.pages",
+  "perms": [
+   "لا يحتاج أي أذونات (يعمل في المتصفح)"
+  ],
+  "category": "ترفيه",
+  "contains_ads": false,
+  "developer": "Apps Store",
+  "updated": "28 نوفمبر 2026"
  }
 ]
