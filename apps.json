@@ -82,15 +82,15 @@
   ],
   "locked": true
  },
-  {
+ {
   "name": "مسجل الصوت",
   "desc": "مسجل صوت: تسجيل وإيقاف مؤقت وعلامات، قص التسجيلات، تشغيل بسرعات، تخطّي الصمت، سلة مهملات، صيغتا M4A وWAV، ومايك بلوتوث.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "size": "4.9 MB",
   "icon": "data:image/png;base64,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",
-  "apk": "https://github.com/ahm9sam-boop/apps-store/releases/download/sawti-recorder-1.1.0/2-sawti-recorder-1.1.0.apk",
-  "sha256": "7e985772f22e207ffbd19b08f542533ba66546ec98c41469f5d47c9ff8a81549",
-  "code": 2,
+  "apk": "https://github.com/ahm9sam-boop/apps-store/releases/download/sawti-recorder-1.1.1/1-sawti-recorder-1.1.1.apk",
+  "sha256": "6ecd0944b7d6fc755fdadfcc3360f7e722948cd9c9bb9d561f43f8fe52b8c05f",
+  "code": 3,
   "pkg": "com.sawti.recorder",
   "perms": [
    "الميكروفون (لتسجيل الصوت)",
@@ -106,7 +106,7 @@
   "contains_ads": true,
   "developer": "Apps Store",
   "updated": "28 نوفمبر 2026",
-  "whats_new": "قص التسجيلات، سلة مهملات، صيغة WAV، مايك بلوتوث، ودجت تسجيل سريع، وإصلاحات",
+  "whats_new": "إصلاح مهم: الإيقاف المؤقت بقى واضح (المؤقت والموجة بيقفوا)، وإصلاح تلف الملفات بعد الإيقاف أو التسجيل القصير",
   "screenshots": [
    "https://github.com/ahm9sam-boop/apps-store/releases/download/sawti-recorder-1.0.0/2-s1-record.png",
    "https://github.com/ahm9sam-boop/apps-store/releases/download/sawti-recorder-1.0.0/3-s2-list.png",
