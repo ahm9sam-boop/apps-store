@@ -17,7 +17,7 @@ main{max-width:760px;margin:auto;padding:16px}
 .stars{color:#f9ab00;font-size:13px;letter-spacing:1px}
 .stars .n{color:#5f6368;font-size:12px;letter-spacing:0}
 .badge{background:#e6f4ea;color:#137333;border-radius:10px;font-size:11px;padding:2px 8px}
-.btn{display:inline-block;border:0;cursor:pointer;font-family:inherit;background:#01875f;color:#fff;font-size:14px;font-weight:600;padding:9px 26px;border-radius:20px;text-align:center}
+.btn{display:inline-block;text-decoration:none;border:0;cursor:pointer;font-family:inherit;background:#01875f;color:#fff;font-size:14px;font-weight:600;padding:9px 26px;border-radius:20px;text-align:center}
 .btn.ghost{background:#fff;color:#01875f;border:1px solid #dadce0}
 .btn.dis{background:#f1f3f4!important;color:#9aa0a6!important;cursor:default}
 .btnrow{display:flex;gap:10px;margin:14px 0;flex-wrap:wrap}
@@ -83,14 +83,15 @@ function ratingLine(x){if(!x.rating)return '<span class="badge">جديد</span>'
 function btnFor(x){
   if(x.locked)return '<span class="btn dis">مقفول مؤقتاً</span>';
   var st=getLS(x.pkg),h='';
-  if(st&&st.code&&x.code>st.code)h+='<button class="btn" onclick="dl(\''+esc(x.pkg)+'\')">تحديث</button>';
+  if(st&&st.code&&x.code>st.code)h+='<a class="btn" href="'+esc(x.apk)+'" onclick="markInst(\''+esc(x.pkg)+'\')">تحديث</a>';
   else if(st&&st.code)h+='<button class="btn ghost" onclick="opn(\''+esc(x.pkg)+'\')">فتح</button>';
-  else h+='<button class="btn" onclick="dl(\''+esc(x.pkg)+'\')">تثبيت</button>';
+  else h+='<a class="btn" href="'+esc(x.apk)+'" onclick="markInst(\''+esc(x.pkg)+'\')">تثبيت</a>';
   if(st&&st.code)h+='<button class="btn ghost" onclick="uninst(\''+esc(x.pkg)+'\')">إلغاء التثبيت</button>';
   return h;
 }
 function findApp(p){for(var i=0;i<APPS.length;i++)if(APPS[i].pkg===p)return APPS[i];return null}
 function dl(pkg){var x=findApp(pkg);if(!x||!x.apk)return;setLS(pkg,{code:x.code||0,ts:Date.now()});var a=document.createElement('a');a.href=x.apk;a.download='';document.body.appendChild(a);a.click();a.remove();toast('بدأ التحميل…');setTimeout(route,800)}
+function markInst(pkg){var x=findApp(pkg);if(!x)return;setLS(pkg,{code:x.code||0,ts:Date.now()});toast('بدأ التحميل… افتح الملف بعد انتهائه لتثبيت التطبيق')}
 function opn(pkg){location.href='intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package='+pkg+';S.browser_fallback_url='+encodeURIComponent(location.protocol+'//'+location.host+location.pathname+'?notinstalled=1')+';end'}
 function uninst(pkg){location.href='intent://'+pkg+'#Intent;scheme=package;action=android.intent.action.DELETE;end';setTimeout(function(){var s=getLS(pkg);if(s){localStorage.removeItem(K(pkg));route()}},4000)}
 function home(q){
