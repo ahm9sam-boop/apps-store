@@ -2,17 +2,17 @@
  {
   "name": "تطبيق القرآن الكريم والأحاديث الشريفة",
   "desc": "القرآن كاملاً بدون إنترنت، الأذكار، مواقيت الصلاة، القبلة، السيرة وقصص الأنبياء وأكثر.",
-  "version": "1.8.3",
-  "size": "4.7 MB",
+  "version": "1.9.3",
+  "size": "4.9 MB",
   "icon": "noorislam.png",
-  "apk": "noorislam.apk",
-  "sha256": "63506fb1d21ffacb0c2ca4f7d142cd67f802134ba459d63ac089f6122e18546f",
-  "code": 16,
+  "apk": "https://github.com/ahm9sam-boop/apps-store/releases/download/noorislam-1.9.3/2-noorislam.apk",
+  "sha256": "22d5b38bd7017d9127a91dde5ff60cd2d0432534dfb1dc29c20499523ef7b564",
+  "code": 23,
   "pkg": "io.github.ahm9sam.noorislam",
   "category": "كتب ومراجع",
   "contains_ads": true,
   "developer": "Apps Store",
-  "updated": "نوفمبر 2026",
+  "updated": "28 نوفمبر 2026",
   "perms": [
    "الإنترنت",
    "الموقع التقريبي والدقيق",
@@ -23,7 +23,7 @@
    "معرّف الإعلانات",
    "البقاء نشطاً في الخلفية"
   ],
-  "whats_new": "تحديث: إزالة بيانات التواصل الشخصية وتحديث رابط المشاركة.",
+  "whats_new": "نسخة جديدة كلياً 1.9.3. مهم: احذف الإصدار القديم أولاً ثم ثبّت الجديد.",
   "screenshots": [
    "https://github.com/ahm9sam-boop/apps-store/releases/download/noorislam-1.8.3/6-noorislam-home.png",
    "https://github.com/ahm9sam-boop/apps-store/releases/download/noorislam-1.8.3/7-noorislam-quran.png",
